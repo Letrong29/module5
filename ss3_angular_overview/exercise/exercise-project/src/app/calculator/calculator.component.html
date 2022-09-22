@@ -1,0 +1,14 @@
+<h1>Calculator</h1>
+
+<input (input)="calculate()" type="number" placeholder="first number" [(ngModel)]="fistNum">
+
+<select (change)="calculate()" [(ngModel)]="operator">
+  <option selected value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">x</option>
+  <option value="/">/</option>
+</select>
+
+<input (input)="calculate()" type="number" placeholder="last number" [(ngModel)]="lastNum">
+
+<span>result: {{result}}</span>
