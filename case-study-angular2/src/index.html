@@ -6,9 +6,36 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
+  <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    function displayForm(value) {
+      switch (value) {
+        case "option1":
+          document.getElementById("opt1").style.display = "block";
+          document.getElementById("opt2").style.display = "block";
+          document.getElementById("opt3").style.display = "block";
+          document.getElementById("opt4").style.display = "block";
+          document.getElementById("opt5").style.display = "none";
+          break;
+        case "option2":
+          document.getElementById("opt1").style.display = "block";
+          document.getElementById("opt2").style.display = "none";
+          document.getElementById("opt3").style.display = "block";
+          document.getElementById("opt4").style.display = "block";
+          document.getElementById("opt5").style.display = "none";
+          break;
+        case "option3":
+          document.getElementById("opt1").style.display = "none";
+          document.getElementById("opt2").style.display = "none";
+          document.getElementById("opt3").style.display = "none";
+          document.getElementById("opt4").style.display = "none";
+          document.getElementById("opt5").style.display = "block";
+          break;
+      }
+    }
+  </script>
 </body>
 </html>
