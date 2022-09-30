@@ -1,0 +1,14 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>từ</th>
+      <th>chi tiếc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let word of dictionaryList">
+      <td>{{word.english}}</td>
+      <td><a [routerLink]="['/detail', word.english]">detail</a></td>
+    </tr>
+  </tbody>
+</table>
