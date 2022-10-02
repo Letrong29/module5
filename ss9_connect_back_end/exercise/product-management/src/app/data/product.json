@@ -1,0 +1,88 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone 12",
+      "price": 240000,
+      "category": {
+        "id": 1,
+        "name": "smart-phone"
+      },
+      "description": "new"
+    },
+    {
+      "id": 2,
+      "name": "Iphone X",
+      "price": 200000,
+      "category": {
+        "id": 1,
+        "name": "smart-phone"
+      },
+      "description": "new"
+    },
+    {
+      "id": 3,
+      "name": "Iphone X S Max",
+      "price": 240000,
+      "category": {
+        "id": 1,
+        "name": "smart-phone"
+      },
+      "description": "new"
+    },
+    {
+      "id": 4,
+      "name": "Iphone 8",
+      "price": 240000,
+      "category": {
+        "id": 1,
+        "name": "smart-phone"
+      },
+      "description": "new"
+    },
+    {
+      "id": 5,
+      "name": "Iphone 13",
+      "price": 240000,
+      "category": {
+        "id": 1,
+        "name": "smart-phone"
+      },
+      "description": "new"
+    },
+    {
+      "id": 6,
+      "name": "Iphone 7",
+      "price": 20000,
+      "category": {
+        "id": 1,
+        "name": "smart-phone"
+      },
+      "description": "99%"
+    },
+    {
+      "id": 7,
+      "name": "Iphone 7",
+      "price": 20000,
+      "category": {
+        "id": 1,
+        "name": "smart-phone"
+      },
+      "description": "99%"
+    }
+  ],
+  "categorys": [
+    {
+      "id": 1,
+      "name": "smart-phone"
+    },
+    {
+      "id": 2,
+      "name": "tab-pad"
+    },
+    {
+      "id": 3,
+      "name": "I-pad"
+    }
+  ]
+}

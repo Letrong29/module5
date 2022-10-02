@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row mt-5 mb-3">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 shadow">
+      <h1 class="text-center">Add new product</h1>
+      <form [formGroup]="editForm" (ngSubmit)="update()">
+        <div class="mb-3 mt-3">
+          <label for="name" class="form-label">Name product:</label>
+          <input formControlName="name" type="text" class="form-control" id="name">
+        </div>
+
+        <div class="mb-3">
+          <label for="price" class="form-label">Price:</label>
+          <input formControlName="price" type="number" class="form-control" id="price">
+        </div>
+
+        <div class="mb-3">
+          <label for="category" class="form-label">Category:</label>
+          <select  formControlName="category" id="category" class="form-select" aria-label="Default select example">
+            <option *ngFor="let category of categoryList" [ngValue]="category">{{category.name}}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description:</label>
+          <input formControlName="description" type="text" class="form-control" id="description">
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+      </form>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+

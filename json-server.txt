@@ -1,0 +1,7 @@
+//1. Cài đặt json server
+npm install -g json-server
+
+//2. Tạo file data.json
+
+//3. Chạy server
+json-server --watch data.json

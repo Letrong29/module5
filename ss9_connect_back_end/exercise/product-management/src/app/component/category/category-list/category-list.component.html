@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-lg-12 text-center">
+      <h1>Category list</h1>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-lg-12 text-center">
+      <button class="btn btn-primary">Add new category</button>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <table class="table text-center table-dark table-hover">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let category of categorys, index as i">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{category.name}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
