@@ -4,6 +4,7 @@ import {ProductService} from '../../../service/product.service';
 import {Router} from '@angular/router';
 import {CategoryService} from '../../../service/category.service';
 import {Category} from '../../../model/category';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-product-create',
@@ -32,15 +33,14 @@ export class ProductCreateComponent implements OnInit {
 
   save() {
     let product = this.createForm.value;
-    console.log(product);
     this.productService.save(product).subscribe(next => {
       this.router.navigateByUrl('product');
+      Swal.fire('successfully add new','','success')
     });
   }
 
   showCategoryList() {
     this.categoryService.getAll().subscribe(categoryList => {
-      console.log(categoryList);
       this.categoryList = categoryList
     });
   }

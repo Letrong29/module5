@@ -1,0 +1,138 @@
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8 shadow-lg">
+        <form *ngIf="editFrom" [formGroup]="editFrom" (ngSubmit)="update()">
+          <div class="row">
+            <div class="col-12">
+              <div class="mb-5 mt-3 text-center fst-italic">
+                <h1>Chỉnh sửa thông tin xe khách</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="carNumber" class="form-label fw-bold fst-italic">Số xe:</label>
+                <input readonly formControlName="carNumber" type="text" class="form-control" id="carNumber"
+                       aria-describedby="nameError">
+              </div>
+
+              <div class="mb-3">
+                <label for="typeCar" class="form-label fw-bold fst-italic">Loại xe <span class="text-danger">(*)</span>:</label>
+                <span class="text-danger" *ngIf="!typeCard.valid && typeCard.touched">
+                  <span *ngIf="typeCard.errors.required"> Vui lòng nhập !</span>
+                </span>
+                <input formControlName="typeCar" type="text" class="form-control" id="typeCar"
+                       aria-describedby="nameError">
+              </div>
+
+              <div class="mb-3">
+                <label for="name" class="form-label fw-bold fst-italic">Tên nhà xe <span class="text-danger">(*)</span>:</label>
+                <span class="text-danger" *ngIf="!agency.valid && agency.touched">
+                  <span *ngIf="agency.errors.required"> Vui lòng nhập !</span>
+                </span>
+                <input formControlName="name" type="text" class="form-control" id="name" aria-describedby="nameError">
+              </div>
+
+              <div class="mb-3">
+                <label for="start" class="form-label fw-bold fst-italic">Điểm đi <span
+                  class="text-danger">(*)</span>:</label>
+                <span class="text-danger" *ngIf="!begin.valid && begin.touched">
+                  <span *ngIf="begin.errors.required"> Vui lòng nhập !</span>
+                </span>
+                <select formControlName="start" id="start" class="form-select" aria-label="Default select example">
+                  <option [selected]="begin" value="{{begin.value}}">{{begin.value}}</option>
+                  <option value="Đà Nẵng">Đà Nẵng</option>
+                  <option value="Quảng Nam">Quảng Nam</option>
+                  <option value="Quảng Trị">Quảng Trị</option>
+                  <option value="Huế">Huế</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="end" class="form-label fw-bold fst-italic">Điểm đến <span
+                  class="text-danger">(*)</span>:</label>
+                <span class="text-danger" *ngIf="!end.valid && end.touched">
+                  <span *ngIf="end.errors.required"> Vui lòng nhập !</span>
+                </span>
+                <select formControlName="end" id="end" class="form-select" aria-label="Default select example">
+                  <option [selected]="end" value="{{end.value}}">{{end.value}}</option>
+                  <option value="Đà Nẵng">Đà Nẵng</option>
+                  <option value="Quảng Nam">Quảng Nam</option>
+                  <option value="Quảng Trị">Quảng Trị</option>
+                  <option value="Huế">Huế</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="phone" class="form-label fw-bold fst-italic">Số điện thoại <span
+                  class="text-danger">(*)</span>:</label>
+                <span class="text-danger" *ngIf="!phone.valid && phone.touched">
+                  <span *ngIf="phone.errors.required"> Vui lòng nhập !</span>
+                  <span *ngIf="phone.errors.pattern"> Gồm 10 số và bắt đầu bằng (090, 093, 097) !</span>
+                </span>
+                <input formControlName="phone" type="text" class="form-control" id="phone" aria-describedby="nameError">
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label fw-bold fst-italic">Email <span
+                  class="text-danger">(*)</span>:</label>
+                <span class="text-danger" *ngIf="!email.valid && email.touched">
+                  <span *ngIf="email.errors.required"> Vui lòng nhập !</span>
+                  <span *ngIf="email.errors.email"> Nhập đúng định dạng email !</span>
+                </span>
+                <input formControlName="email" type="email" class="form-control" id="email"
+                       aria-describedby="nameError">
+              </div>
+
+              <div class="mb-3">
+                <label for="starTime" class="form-label fw-bold fst-italic">Giờ đi <span class="text-danger">(*)</span>:</label>
+                <span class="text-danger" *ngIf="!startTime.valid && startTime.touched">
+                  <span *ngIf="startTime.errors.required"> Vui lòng nhập !</span>
+                </span>
+                <input formControlName="startTime" type="time" class="form-control" id="starTime"
+                       aria-describedby="nameError">
+              </div>
+
+              <div class="mb-3">
+                <label for="endTime" class="form-label fw-bold fst-italic">Giờ đến <span class="text-danger">(*)</span>:</label>
+                <span class="text-danger" *ngIf="!endTime.valid && endTime.touched">
+                  <span *ngIf="endTime.errors.required"> Vui lòng nhập !</span>
+                </span>
+                <input formControlName="endTime" type="time" class="form-control" id="endTime"
+                       aria-describedby="nameError">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 text-end">
+              <button type="submit" class="btn btn-primary w-25 mb-3 shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save"
+                     viewBox="0 0 16 16">
+                  <path
+                    d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="col-6 text-start">
+              <a routerLink="/my-exam" class="btn btn-secondary w-25 mb-3 shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                        d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
+  </div>
+</div>

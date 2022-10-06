@@ -1,0 +1,83 @@
+<header class="mb-5">
+  <!-- Background image -->
+  <div
+    class="p-0 text-center bg-image container-fluid"
+    style="
+      background-image: url('../../../../assets/images/bg_6_edit.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      height: 200px;
+      width: auto;
+    "
+  >
+    <div
+      style="background-color: rgba(0, 0, 0, 0.3)"
+      class=" d-flex justify-content-center align-items-end h-100 w-100">
+      <div>
+        <h6><a href="#" class="mb-3 text-light">Home</a></h6>
+        <h1 style="font-family: 'Playfair Display'" class="text-light">
+          Contract
+        </h1>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+<div class="container-fluid">
+  <div class="row justify-content-center mb-4 mt-5">
+    <div class="col-md-7 heading-section text-center">
+      <h2>List</h2>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-lg-12 text-center">
+      <h2><a routerLink="" class="btn btn-primary">new contract</a></h2>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-lg-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Service</th>
+          <th scope="col">Customer</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col">Deposit</th>
+          <th scope="col">Total Money</th>
+          <th scope="col">Detail</th>
+          <th scope="col">Attach Service</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let contract of contractList, index as i">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{contract.facilityId.name}}</td>
+          <td>{{contract.customerId.name}}</td>
+          <td>{{contract.startDate}}</td>
+          <td>{{contract.endDate}}</td>
+          <td>{{contract.deposit}}</td>
+          <td>$3000</td>
+          <td>
+            <button class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+              </svg>
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-secondary">
+              Attach Service List
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

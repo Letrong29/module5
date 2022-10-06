@@ -1,16 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Iphone 12",
-      "price": 240000,
-      "category": {
-        "id": 1,
-        "name": "smart-phone"
-      },
-      "description": "new"
-    },
-    {
       "id": 2,
       "name": "Iphone X",
       "price": 200000,
@@ -62,11 +52,31 @@
     },
     {
       "id": 7,
-      "name": "Iphone 7",
-      "price": 20000,
+      "name": "samsung galaxy tab-3",
+      "price": 50000,
+      "category": {
+        "id": 2,
+        "name": "tab-pad"
+      },
+      "description": "new"
+    },
+    {
+      "id": 8,
+      "name": "Iphone 14",
+      "price": 23000000,
       "category": {
         "id": 1,
         "name": "smart-phone"
+      },
+      "description": "new"
+    },
+    {
+      "id": 9,
+      "name": "Iphone 7",
+      "price": 3000,
+      "category": {
+        "id": 2,
+        "name": "tab-pad"
       },
       "description": "99%"
     }

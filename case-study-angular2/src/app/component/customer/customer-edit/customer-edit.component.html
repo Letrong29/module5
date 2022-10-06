@@ -1,0 +1,136 @@
+<header>
+  <!-- Background image -->
+  <div
+    class="p-0 text-center bg-image container-fluid"
+    style="
+      background-image: url('../../../../assets/images/about4_edit.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      height: 200px;
+      width: auto;
+    "
+  >
+    <div
+      style="background-color: rgba(0, 0, 0, 0.3)"
+      class=" d-flex justify-content-center align-items-end h-100 w-100">
+      <div>
+        <h6><a href="#" class="mb-3 text-light">Home</a></h6>
+        <h1 style="font-family: 'Playfair Display'" class="text-light">
+          Customer
+        </h1>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+<section class="ftco-section ftc-no-pb ftc-no-pt">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 p-md-5 img img-2 img-3 d-flex justify-content-center align-items-center"
+           style="background-image: url('../../../../assets/images/bg_customer2_edit.jpg');">
+      </div>
+      <div class="col-md-7 py-5 wrap-about pb-md-5">
+        <div class="heading-section heading-section-wo-line pt-md-4 mb-5">
+          <div class="ml-md-0">
+            <span class="subheading">Our Restaurants</span>
+            <h2 class="mb-4">Update Customer Form</h2>
+          </div>
+        </div>
+        <div class="pb-md-4">
+          <div class="row mt-5">
+            <div style="background: #e9f2ef" class="col-lg-12 shadow-lg">
+              <form [formGroup]="updateForm" (ngSubmit)="update()">
+                <div class="row mt-3">
+                  <div class="col-6">
+                    <div class="form-group mb-3">
+                      <label for="nameCustomer" class="form-label fw-bold fst-italic">Name:</label>
+                      <span class="text-danger" *ngIf="!name.valid && name.touched">
+                        <span *ngIf="name.errors.required"> please enter</span>
+                        <span *ngIf="name.errors.pattern"> wrong format</span>
+                      </span>
+                      <input formControlName="name" type="text" id="nameCustomer" class="form-control icon-fonticons">
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label for="dateOfBirth" class="form-label fw-bold fst-italic">Birthday:</label>
+                      <span class="text-danger" *ngIf="!dateOfBirth.valid && dateOfBirth.touched">
+                        <span *ngIf="dateOfBirth.errors.required"> please enter</span>
+                        <span *ngIf="dateOfBirth.errors.dateOfBirth"> under 18 years old</span>
+                      </span>
+                      <input formControlName="dateOfBirth" type="date" id="dateOfBirth" class="form-control icon-date_range" placeholder="Date of birth">
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label for="gender" class="form-label fw-bold fst-italic">Gender:</label>
+                      <span class="text-danger" *ngIf="!gender.valid && gender.touched">
+                        <span *ngIf="gender.errors.required"> please choose gender</span>
+                      </span>
+                      <div class="select-wrap one-third">
+                        <select formControlName="gender" name="" id="gender" class="form-control icon-fonticons">
+                          <option value="false">Women</option>
+                          <option value="true">Man</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label for="idCard" class="form-label fw-bold fst-italic">ID Card:</label>
+                      <span class="text-danger" *ngIf="!idCard.valid && idCard.touched">
+                        <span *ngIf="idCard.errors.required"> please enter</span>
+                        <span *ngIf="idCard.errors.pattern"> 9 or 12 numbers</span>
+                      </span>
+                      <input formControlName="idCard" type="text" id="idCard" class="form-control icon-fonticons">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group mb-3">
+                      <label for="phoneNumber" class="form-label fw-bold fst-italic">Phone:</label>
+                      <span class="text-danger" *ngIf="!phoneNumber.valid && phoneNumber.touched">
+                        <span *ngIf="phoneNumber.errors.required"> please enter</span>
+                        <span *ngIf="phoneNumber.errors.pattern"> start witch 090 or 091</span>
+                      </span>
+                      <input formControlName="phoneNumber" type="number" id="phoneNumber" class="form-control icon-fonticons">
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label for="email" class="form-label fw-bold fst-italic">Email:</label>
+                      <span class="text-danger" *ngIf="!email.valid && email.touched">
+                        <span *ngIf="email.errors.required"> please enter</span>
+                        <span *ngIf="email.errors.email"> wrong format</span>
+                      </span>
+                      <input formControlName="email" type="email" id="email" class="form-control icon-fonticons">
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label for="customerType" class="form-label fw-bold fst-italic">Type:</label>
+                      <div class="select-wrap one-third">
+                        <select formControlName="customerType" name="customerType" id="customerType" class="form-control icon-fonticons">
+                          <option *ngFor="let type of customerTypeList" [ngValue]="type.id">{{type.name}}</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                      <label for="address" class="form-label fw-bold fst-italic">Address:</label>
+                      <span class="text-danger" *ngIf="!address.valid && address.touched">
+                        <span *ngIf="address.errors.required"> please enter</span>
+                      </span>
+                      <input formControlName="address" type="text" id="address" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <button type="submit" class="btn btn-primary w-100 mb-3">Update</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -28,6 +28,7 @@ export class ProductEditComponent implements OnInit {
           id: new FormControl(product.id),
           name: new FormControl(product.name),
           price: new FormControl(product.price),
+          category: new FormControl(product.category.id),
           description: new FormControl(product.description),
         })
       });
@@ -39,15 +40,18 @@ export class ProductEditComponent implements OnInit {
   }
 
   update() {
-    this.product = this.editForm.value;
-    this.productService.update(this.product).subscribe(next => {
-      this.router.navigateByUrl('product')
-    });
+    let product = this.editForm.value;
+    this.categoryService.find(product.category).subscribe(category => {
+      this.product = this.editForm.value;
+      this.product.category = category;
+      this.productService.update(this.product).subscribe(next => {
+        this.router.navigateByUrl('product')
+      });
+    })
   }
 
   showCategoryList() {
     this.categoryService.getAll().subscribe(categoryList => {
-      console.log(categoryList);
       this.categoryList = categoryList
     });
   }

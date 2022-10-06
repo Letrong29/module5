@@ -12,7 +12,11 @@ export class ProductService {
   }
 
   getAll(): Observable<any> {
-    return this.httpClient.get('http://localhost:3000/products');
+    return this.httpClient.get("http://localhost:3000/products");
+  }
+
+  search(name, id): Observable<any> {
+    return this.httpClient.get('http://localhost:3000/products?name_like=' + name + '&category.id_like=' + id);
   }
 
   save(product: Product) {
